@@ -87,7 +87,7 @@ def main():
         args.job_dir = get_shared_folder() / "%j"
 
     # Note that the folder will depend on the job_id, to easily track experiments
-    executor = submitit.AutoExecutor(folder=args.job_dir, slurm_max_num_timeout=30)
+    executor = submitit.LocalExecutor(folder=args.job_dir)
 
     num_gpus_per_node = args.ngpus
     nodes = args.nodes
