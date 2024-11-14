@@ -121,7 +121,7 @@ def main():
     trainer = Trainer(args)
     job = executor.submit(trainer)
 
-    # print("Submitted job_id:", job.job_id)
+    print("Submitted job_id:", job.job_id)
     print(job.job_id)
 
 
