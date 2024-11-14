@@ -51,6 +51,7 @@ class Trainer(object):
         self.args = args
 
     def __call__(self):
+        print("Starting training...")
         import main_pretrain as trainer
 
         self._setup_gpu_args()
@@ -122,6 +123,7 @@ def main():
     job = executor.submit(trainer)
 
     print("Submitted job_id:", job.job_id)
+    print("Job status:", job.state)
     print(job.job_id)
 
 
