@@ -31,11 +31,10 @@ def parse_args():
 
 
 def get_shared_folder() -> Path:
-    if Path("/checkpoint/").is_dir():
-        p = Path(f"/checkpoint/experiments")
-        p.mkdir(exist_ok=True)
-        return p
-    raise RuntimeError("No shared folder available")
+    # Use Kaggle's working directory as a fallback
+    p = Path("/kaggle/working/experiments")
+    p.mkdir(exist_ok=True)
+    return p
 
 
 def get_init_file():
