@@ -113,7 +113,9 @@ def main():
     args.dist_url = get_init_file().as_uri()
     args.output_dir = args.job_dir
 
+    print("Getting the trainer...")
     trainer = Trainer(args)
+    print("Submit the trainer...")
     job = executor.submit(trainer)
 
     print("Submitted job_id:", job.job_id)
